@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "chart.js": "^4.4.2",
+    "crypto": "^1.0.1",
+    "express": "^4.19.1",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.18.0",
+    "express-static-gzip": "^2.1.7",
+    "mongoose": "^8.2.3",
+    "node-cron": "^3.0.3",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "twilio": "^5.0.1"
+  }
+}

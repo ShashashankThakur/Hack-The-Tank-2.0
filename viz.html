@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charts</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Bar Graph: Users by Age Range</h1>
+    <canvas id="barChart" width="400" height="400"></canvas>
+
+    <script>
+        // Dummy data for illustration purposes
+        const userData = [
+            { age: 18 },
+            { age: 25 },
+            { age: 32 },
+            { age: 42 },
+            { age: 55 },
+        ];
+
+        // Calculate the number of users in each age range
+        const ageRanges = ['10-20', '20-30', '30-40', '40-50', '50-60'];
+        const userCounts = Array.from({ length: ageRanges.length }, () => 0);
+
+        userData.forEach(user => {
+            const age = user.age;
+            if (age >= 10 && age < 20) {
+                userCounts[0]++;
+            } else if (age >= 20 && age < 30) {
+                userCounts[1]++;
+            } else if (age >= 30 && age < 40) {
+                userCounts[2]++;
+            } else if (age >= 40 && age < 50) {
+                userCounts[3]++;
+            } else if (age >= 50 && age < 60) {
+                userCounts[4]++;
+            }
+        });
+
+        // Render bar graph
+        var barChartCtx = document.getElementById('barChart').getContext('2d');
+        var barChart = new Chart(barChartCtx, {
+            type: 'bar',
+            data: {
+                labels: ageRanges,
+                datasets: [{
+                    label: 'Users',
+                    data: userCounts,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
