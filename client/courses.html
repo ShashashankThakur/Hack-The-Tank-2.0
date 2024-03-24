@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAS Fat to Slim</title>
+  <link rel="stylesheet" href="styles/courses.css">
+</head>
+<style>
+  /* Global Rules */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Small */
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+
+  /* Medium */
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+
+  /* Large */
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+
+  /* Landing Page */
+  .courses-page header {
+    min-height: 100px;
+    display: flex;
+  }
+
+  @media (max-width: 767px) {
+    .courses-page header {
+      min-height: auto;
+      display: initial;
+    }
+  }
+
+  .courses-page header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 767px) {
+    .courses-page header .container {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .courses-page header .logo {
+    color: #5d5d5d;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+
+  @media (max-width: 767px) {
+    .courses-page header .logo {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .courses-page header .links {
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 767px) {
+    .courses-page header .links {
+      text-align: center;
+      gap: 10px;
+    }
+  }
+
+  .courses-page header .links li {
+    margin-left: 30px;
+    color: #5d5d5d;
+    cursor: pointer;
+    transition: .3s;
+  }
+
+  @media (max-width: 767px) {
+    .courses-page header .links li {
+      margin-left: auto;
+    }
+  }
+
+  .courses-page header .links li:last-child {
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: #FFF;
+    background-color: #84C240;
+  }
+
+  .courses-page header .links li:not(:last-child):hover {
+    color: #84C240;
+  }
+
+  .courses-page .content .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 140px;
+    min-height: calc(100vh - 80px);
+    width: 80%;
+  }
+
+  @media (max-width: 767px) {
+    .courses-page .content .container {
+      gap: 0;
+      min-height: calc(100vh - 101px);
+      justify-content: center;
+      flex-direction: column-reverse;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .courses-page .content .info {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+  }
+
+  .courses-page .content .info h1 {
+    color: #5d5d5d;
+    font-size: 44px;
+  }
+
+  .courses-page .content .info p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 15px;
+    color: #5d5d5d;
+  }
+
+  .courses-page .content .info button {
+    border: 0;
+    border-radius: 20px;
+    padding: 12px 30px;
+    margin-top: 30px;
+    cursor: pointer;
+    color: #FFF;
+    background-color: #84C240;
+  }
+
+  .courses-page .content .image img {
+    max-width: 100%
+  }
+
+  /* Styles for the container */
+  body, html {
+    margin: 0;
+    display: flex;
+    align-items: center; /* Center the flex container vertically */
+  }
+
+  .course-container {
+    margin: 10px auto;
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap; /* Wrap items to the next row if needed */
+  }
+
+  /* Styles for the course card */
+  .course-card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .course-card h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+
+  .course-card p {
+    margin: 10px 0;
+    color: #666;
+  }
+
+  /* Styles for the enroll button */
+  .enroll-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .enroll-button:hover {
+    background-color: #0056b3;
+  }
+
+  button#getStartedButton {
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    border: none;
+    border-radius: 5px;
+    background-color: #84C240; /* Button background color */
+    color: #fff; /* Text color */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Hover effect */
+button#getStartedButton:hover {
+    background-color: #6FA030; /* Darker shade of button color on hover */
+}
+</style>
+<body>
+<div class="courses-page">
+  <header>
+    <div class="container">
+      <img src="images/logo-1.jpg">
+      <a href="#" class="logo">SAS <b>Fat to Slim</b></a>
+      <ul class="links">
+        <li><a href="index2.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <button id="getStartedButton">Get Started</button>
+      </ul>
+    </div>
+  </header>
+  <div class="course-container">
+    <div class="course-card">
+      <h2>Basic Weight Loss Programme</h2>
+      <p>Duration: 1 month</p>
+      <p>Level: Beginner</p>
+      <p>Description: Most basic course we offer</p>
+      <button class="enroll-button" onclick="enroll('Basic Weight Loss Programme')">Enroll</button>
+    </div>
+
+    <div class="course-card">
+      <h2>Intermediate Programme</h2>
+      <p>Duration: 1 month</p>
+      <p>Level: Intermediate</p>
+      <p>Description: Bit more personalized.</p>
+      <button class="enroll-button" onclick="enroll('Intermediate Programme')">Enroll</button>
+    </div>
+
+    <div class="course-card">
+      <h2>Advanced Programme</h2>
+      <p>Duration: 1 month</p>
+      <p>Level: Advanced</p>
+      <p>Description: Perfectly suiting your lifestyle and to your comfort.</p>
+      <button class="enroll-button" onclick="enroll('Advanced Programme')">Enroll</button>
+    </div>
+
+    <div class="course-card">
+      <h2>Master Programme</h2>
+      <p>Duration: 1 month</p>
+      <p>Level: Expert</p>
+      <p>Description: We personally provide you with a one-on-one coach.</p>
+      <button class="enroll-button" onclick="enroll('Master Programme')">Enroll</button>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 SAS Fat to Slim</p>
+    </div>
+  </footer>
+</div>
+<script>
+  async function enroll(courseName) {
+    try {
+      const response = await fetch('/enroll', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ courseName })
+      });
+
+      if (response.ok) {
+        alert('Enrollment successful!');
+      } else {
+        alert('Enrollment failed. Please try again later.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again later.');
+    }
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    const getStartedButton = document.getElementById('getStartedButton');
+    getStartedButton.addEventListener('click', function () {
+        // Navigate to '/login' route when the button is clicked
+        window.location.href = '/login';
+    });
+});
+</script>
+
+</body>
+</html>

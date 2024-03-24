@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Your Website</title>
+</head>
+<style>
+  /* Start Global Rules */
+  * {
+  box-sizing: border-box;
+  }
+  body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  }
+  a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+  }
+
+  ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  }
+  .container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  /* Small */
+  @media (min-width: 768px) {
+  .container {
+  width: 750px;
+  }
+  }
+  /* Medium */
+  @media (min-width: 992px) {
+  .container {
+  width: 970px;
+  }
+  }
+  /* Large */
+  @media (min-width: 1200px) {
+  .container {
+  width: 1170px;
+  }
+  }
+  /* End Global Rules */
+
+  /* Start About Us Page */
+  .about-us-page header {
+  min-height: 80px;
+  display: flex;
+  }
+  @media (max-width: 767px) {
+  .about-us-page header {
+  min-height: auto;
+  display: initial;
+  }
+  }
+  .about-us-page header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  }
+  @media (max-width: 767px) {
+  .about-us-page header .container {
+  flex-direction: column;
+  justify-content: center;
+  }
+  }
+  .about-us-page header .logo {
+  color: #5d5d5d;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 20px;
+  }
+  @media (max-width: 767px) {
+  .about-us-page header .logo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  }
+  }
+  .about-us-page header .links {
+  display: flex;
+  align-items: center;
+  }
+  @media (max-width: 767px) {
+  .about-us-page header .links {
+  text-align: center;
+  gap: 10px;
+  }
+  }
+  .about-us-page header .links li {
+  margin-left: 30px;
+  color: #5d5d5d;
+  cursor: pointer;
+  transition: .3s;
+  }
+  @media (max-width: 767px) {
+  .about-us-page header .links li {
+  margin-left: auto;
+  }
+  }
+
+  .about-us-page header .links li:last-child {
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: white;
+  background-color: #84C240;
+  }
+
+  .about-us-page header .links li:not(:last-child):hover {
+  color: #84C240;
+  }
+
+  .about-us-page .content .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 140px;
+  min-height: calc(100vh - 80px);
+  }
+  @media (max-width: 767px) {
+  .about-us-page .content .container {
+  gap: 0;
+  min-height: calc(100vh - 101px);
+  justify-content: center;
+  flex-direction: column-reverse;
+  }
+  }
+  .about-us-page .content .info {
+  text-align: left;
+  }
+  .about-us-page .content .info h1 {
+  text-align: left;
+  color: #5d5d5d;
+  font-size: 44px;
+  }
+  .about-us-page .content .info p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 15px;
+  color: #5d5d5d;
+  }
+  .about-us-page .content .info button {
+  border: 0;
+  border-radius: 20px;
+  padding: 12px 30px;
+  margin-top: 30px;
+  cursor: pointer;
+  color: #FFF;
+  background-color: #6c63ff;
+  }
+  .about-us-page .content .image img {
+  max-width: 100%;
+  }
+  .about-us-page footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  }
+
+  .highlighted-cards {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  }
+
+  .card {
+  height: 300px;
+  width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin: 0 10px; /* Add margin here */
+  }
+
+  .card:hover {
+  transform: translateY(-5px);
+  }
+
+  .card img {
+  width: 100%;
+  border-radius: 8px;
+  }
+
+  .card p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  }
+
+  button#getStartedButton {
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    border: none;
+    border-radius: 5px;
+    background-color: #84C240; /* Button background color */
+    color: #fff; /* Text color */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Hover effect */
+button#getStartedButton:hover {
+    background-color: #6FA030; /* Darker shade of button color on hover */
+}
+
+  /* End About Us Page */
+</style>
+<body>
+<div class="about-us-page">
+  <header>
+    <div class="container">
+      <img src="images/logo-1.jpg">
+      <a href="index2.html" class="logo">SAS <b>Fat to Slim</b></a>
+      <ul class="links">
+        <li><a href="index2.html">Home</a></li>
+        <li>About Us</li>
+        <li><a href="courses.html">Courses</a></li>
+        <button id="getStartedButton">Get Started</button>
+      </ul>
+    </div>
+  </header>
+  <div class="content">
+    <div class="container">
+      <div class="info">
+        <h1>About Us</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac ullamcorper magna. Sed ac nisi in libero scelerisque molestie a vitae elit. Quisque fringilla ante id justo congue, sit amet consectetur nunc ultricies. Nulla facilisi. Sed condimentum tristique purus, eget venenatis risus vestibulum ac. Donec id enim nec eros varius blandit id id mauris. Integer auctor odio sit amet ipsum pulvinar varius. Vivamus consequat mauris nec elit posuere, nec pellentesque odio accumsan. Integer consequat libero at nisi venenatis, et venenatis eros vehicula. Suspendisse potenti. Sed malesuada faucibus augue, at lobortis purus dignissim quis. Integer vehicula euismod tortor, eget accumsan enim congue ut. Phasellus nec ultricies lacus. Etiam nec odio arcu. Sed feugiat dolor vitae est lobortis, at fermentum leo sagittis. Cras in nisi nec nisl tincidunt varius. Sed gravida dolor ac mi elementum, in mollis nulla pharetra. Vivamus tristique metus nec orci facilisis, vel dapibus tortor fringilla.</p>
+      </div>
+      <div class="image">
+        <img src="./images/vector2.jpg" alt="About Us Image" width="4000">
+      </div>
+    </div>
+  </div>
+  <div class="highlighted-cards">
+    <div class="card">
+      <img src="./images/sp1.jpg" alt="Card 1 Image">
+      <p>Our Indian Spices</p>
+    </div>
+    <div class="card">
+      <img src="./images/sp2.jpg" alt="Card 2 Image">
+      <p>Your Favourite food</p>
+    </div>
+    <div class="card">
+      <img src="./images/sp3.jpg" alt="Card 3 Image">
+      <p>Still lose weight!</p>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 SAS Fat to Slim</p>
+    </div>
+  </footer>
+</div>
+<script>
+  // Add event listener to the "Get Started" button
+  document.addEventListener('DOMContentLoaded', function () {
+      const getStartedButton = document.getElementById('getStartedButton');
+      getStartedButton.addEventListener('click', function () {
+          // Navigate to '/login' route when the button is clicked
+          window.location.href = '/login';
+      });
+  });
+</script>
+</body>
+</html>

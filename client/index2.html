@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAS Fat to Slim</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<style>
+    /* Global Rules */
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Open Sans', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    a, a:hover, a:focus, a:active {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Small */
+    @media (min-width: 768px) {
+        .container {
+            width: 750px;
+        }
+    }
+
+    /* Medium */
+    @media (min-width: 992px) {
+        .container {
+            width: 970px;
+        }
+    }
+
+    /* Large */
+    @media (min-width: 1200px) {
+        .container {
+            width: 1170px;
+        }
+    }
+
+    /* Landing Page */
+    .landing-page header {
+        min-height: 100px;
+        display: flex;
+    }
+
+    @media (max-width: 767px) {
+        .landing-page header {
+            min-height: auto;
+            display: initial;
+        }
+    }
+
+    .landing-page header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    @media (max-width: 767px) {
+        .landing-page header .container {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    .landing-page header .logo {
+        color: #5d5d5d;
+        font-style: italic;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+
+    @media (max-width: 767px) {
+        .landing-page header .logo {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .landing-page header .links {
+        display: flex;
+        align-items: center;
+    }
+
+    @media (max-width: 767px) {
+        .landing-page header .links {
+            text-align: center;
+            gap: 10px;
+        }
+    }
+
+    .landing-page header .links li {
+        margin-left: 30px;
+        color: #5d5d5d;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    @media (max-width: 767px) {
+        .landing-page header .links li {
+            margin-left: auto;
+        }
+    }
+
+    .landing-page header .links li:last-child {
+        border-radius: 20px;
+        padding: 10px 20px;
+        color: #FFF;
+        background-color: #84C240;
+    }
+
+    .landing-page header .links li:not(:last-child):hover {
+        color: #84C240;
+    }
+
+    .landing-page .content .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 140px;
+        min-height: calc(100vh - 80px);
+    }
+
+    @media (max-width: 767px) {
+        .landing-page .content .container {
+            gap: 0;
+            min-height: calc(100vh - 101px);
+            justify-content: center;
+            flex-direction: column-reverse;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .landing-page .content .info {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    }
+
+    .landing-page .content .info h1 {
+        color: #5d5d5d;
+        font-size: 44px;
+    }
+
+    .landing-page .content .info p {
+        margin: 0;
+        line-height: 1.6;
+        font-size: 15px;
+        color: #5d5d5d;
+    }
+
+    .landing-page .content .info button {
+        border: 0;
+        border-radius: 20px;
+        padding: 12px 30px;
+        margin-top: 30px;
+        cursor: pointer;
+        color: #FFF;
+        background-color: #84C240;
+    }
+
+    .landing-page .content .image img {
+        max-width: 100%
+    }
+    /* Styles for the "Get Started" button */
+button#getStartedButton {
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    border: none;
+    border-radius: 5px;
+    background-color: #84C240; /* Button background color */
+    color: #fff; /* Text color */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Hover effect */
+button#getStartedButton:hover {
+    background-color: #6FA030; /* Darker shade of button color on hover */
+}
+
+</style>
+<body>
+<div class="landing-page">
+    <header>
+        <div class="container">
+            <img src="images/logo-1.jpg">
+            <a href="#" class="logo">SAS <b>Fat to Slim</b></a>
+            <ul class="links">
+                <li>Home</li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <button id="getStartedButton">Get Started</button>
+            </ul>
+        </div>
+    </header>
+    <div class="content">
+        <div class="container">
+            <div class="info">
+                <h1>Looking to change your lifestyle</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus odit nihil ullam nesciunt quidem iste, Repellendus odit nihil</p>
+                <button>Button Name</button>
+            </div>
+            <div class="image">
+                <img src="images/vector.jpg" alt="Inspiration">
+            </div>
+        </div>
+    </div>
+    <script>
+        // Add event listener to the "Get Started" button
+        document.addEventListener('DOMContentLoaded', function () {
+            const getStartedButton = document.getElementById('getStartedButton');
+            getStartedButton.addEventListener('click', function () {
+                // Navigate to '/login' route when the button is clicked
+                window.location.href = '/login';
+            });
+        });
+    </script>
+
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SAS Fat to Slim</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
